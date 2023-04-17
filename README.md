@@ -21,15 +21,16 @@ services:
 In the service folder, three services are implemented which are called by commands. Separating these modules is because they are used frequently in commands and also this increases the maintainability, readability, and performance of the program.
 Furthermore, future changes in the CSV data file structure, getting exchange rates and the output way, are easy to apply.
                
-               readCSV:
+ readCSV:
  This is where the CSV file is read. This function accepts token and date, as arguments. For different queries, we can pass the value for these arguments or pass null for them if there is no need.
                                 
  For example, when we want to get portfolio value per token on a special date, the token argument is null (because this query is for all tokens), but the date argument has value.
 
-               getExchangeRate:
+getExchangeRate:
 This function gets exchange rates for the requested tokens by the API which is in question. This function is called in different commands when tokens and their amounts are calculated.
 In this function, it is also easy to change the exchange currency from USD to another ones or add new currencies to the list.
-               Output:
+
+Output:
 This section is where the output is shown to the user. This function is also called in different commands.
 
 Maintainability Features in Summary:
